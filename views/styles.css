@@ -1,0 +1,18 @@
+body{
+    background-color: rgb(244 77 39);;
+}
+form{
+    display:flex;
+    justify-content: space-between;
+    width:600px;
+}
+.button{
+    background-color: #f3fbfc;
+    border:1px solid rgb(115, 115, 115);
+    border-radius: 5px;
+    height: 45px;
+    width: 125px;
+}
+.button:hover{
+    background-color: #ddf7fa;
+}
