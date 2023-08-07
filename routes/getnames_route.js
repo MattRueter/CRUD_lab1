@@ -17,6 +17,7 @@ getnamesRouter.get("/", (req, res) => {
 getnamesRouter.get("/getAllnames", (req,res) => {
         const allNames =_dbNames.map(name => name);
         let nameQuery = req.query.nameInput;
+        
         if(nameQuery!=""){
             res.redirect(`/getnames/getOnename/${nameQuery}`);
         }else{

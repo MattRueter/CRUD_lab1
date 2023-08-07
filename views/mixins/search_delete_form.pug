@@ -1,0 +1,16 @@
+mixin search_delete_form
+    form(
+        action= route
+        method= method
+        class= "columnForm"
+    )
+        input(
+            type= "text"
+            class= "inputfield"
+            name= "nameInput"
+        )
+        input(
+            type= "submit"
+            value= buttonName 
+            class= "button"
+        )

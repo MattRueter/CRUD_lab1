@@ -1,35 +1,9 @@
 html
+    include mixins/nav_buttons
     head 
         title= title 
         style
             include ./styles.css
     body 
-        h1=heading 
-        form(
-            method= "GET"
-        )
-            input(
-                type="submit"
-                value="Find names"
-                formaction= "/getnames"
-                class= "button"
-            )
-            input(
-                type="submit"
-                value="Add names"
-                formaction= "/addnames"
-                class= "button"
-            )
-            input(
-                type="submit"
-                value="Update names"
-                formaction= "/editnames"
-                class= "button"
-            )
-            input(
-                type="submit"
-                value="Delete names"
-                formaction= "/deletenames"
-                class= "button"
-            )
-    
+        h1=heading
+        +nav_buttons()
