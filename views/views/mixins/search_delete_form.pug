@@ -1,0 +1,24 @@
+mixin search_delete_form
+    form(
+        action= route
+        method= method
+        class= "columnForm"
+    )
+        input(
+            type= "text"
+            class= "inputfield"
+            name= "nameInput"
+        )
+        input(
+            type= "submit"
+            value= buttonName 
+            class= "button"
+        )
+    ul 
+        #names
+        if names.length > 0
+            p= message
+            each val in names
+                li= "id: ["+val.id +"]   NAME: "+ val.name + " --- Nationality: "+ val.nationality + " --- DOB: "+ val.dob
+        else 
+            p= message

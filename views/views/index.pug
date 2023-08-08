@@ -1,0 +1,9 @@
+html
+    include mixins/nav_buttons
+    head 
+        title= title 
+        style
+            include ./styles.css
+    body 
+        h1=heading
+        +nav_buttons()
