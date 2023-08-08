@@ -5,7 +5,7 @@ const deletenamesRouter = express.Router();
 deletenamesRouter.get("/", (req, res) => {
     res.render("form", {
         title: "DELETE names", 
-        heading: "DELETE: Type record's id in.", 
+        heading: "DELETE:Use record id to delete.", 
         route:`/deletenames/id`,
         method: "POST",
         buttonName: "Delete",

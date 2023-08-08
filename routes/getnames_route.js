@@ -5,7 +5,7 @@ const getnamesRouter = express.Router();
 getnamesRouter.get("/", (req, res) => {
     res.render("form", {
         title: "Search names", 
-        heading: "You've gone to the GET names page.", 
+        heading: "Search for a record by name.", 
         route:"/getnames/getAllnames",
         method: "GET",
         buttonName: "Search",

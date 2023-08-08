@@ -1,7 +1,8 @@
 html 
     include mixins/nav_buttons
-    include mixins/search_delete_form
-    include mixins/add_update_form
+    include mixins/search_form
+    include mixins/add_form
+    include mixins/update_form
     //variables used in this template assigned to same name variables here for readability.
     - var title= title 
     - var heading= heading
@@ -18,8 +19,10 @@ html
         +nav_buttons()
         if buttonName === "Search" || buttonName === "Delete"
             - var names= names
-            +search_delete_form()
-        else
-            +add_update_form()   
+            +search_form()
+        else if buttonName === "Add"
+            +add_form()   
+        else 
+            +edit_form()
 
         

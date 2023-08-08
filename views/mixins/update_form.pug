@@ -1,0 +1,54 @@
+mixin edit_form
+    form(
+        action= "/editnames/getUser/id"
+        method= "GET"
+        class= "columnForm"
+    )
+        label= "Search by ID:"
+        input(
+            type= "text"
+            class= "inputfield"
+            name= "nameInput"
+        )
+        input(
+            type= "submit"
+            value= "Search" 
+            class= "button"
+        )
+    p= message
+    form(
+        action= "/editnames/editUser/id"
+        method= "POST" 
+        class= "columnForm"
+    )
+        label= "Name:"
+        input(
+            type= "text"
+            class= "inputfield"
+            name= "nameInput"
+            value= name
+        )
+        label= "Nationality:"
+        input(
+           type= "text"
+           class= "inputfield"
+           name= "nationalityInput"
+           value = nationality
+        )
+        label= "Date of Birth:"
+        input(
+            type= "text"
+            class= "inputfield"
+            name= "dobInput"
+            value= dob
+        )
+        input(
+            type= "hidden"
+            name= "id"
+            value= id
+        )
+        input(
+            type= "submit"
+            value= "Edit"
+            class= "button"
+        )
