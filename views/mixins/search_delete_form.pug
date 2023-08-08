@@ -14,3 +14,11 @@ mixin search_delete_form
             value= buttonName 
             class= "button"
         )
+    ul 
+        #names
+        if names.length > 0
+            p= message
+            each val in names
+                li= "id: ["+val.id +"]   NAME: "+ val.name + " --- Nationality: "+ val.nationality + " --- DOB: "+ val.dob
+        else 
+            p= message

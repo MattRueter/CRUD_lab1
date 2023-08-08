@@ -34,14 +34,15 @@ getnamesRouter.get("/getAllnames", (req,res) => {
 });
 
 getnamesRouter.get("/getOnename/:nameQuery", (req,res) => {
-    let notFoundMessage =null
-
+    let message = null;
     let nameQuery = req.params.nameQuery
     nameQuery = nameQuery.toLowerCase()
     let name = _dbNames.filter(name => name.name.toLowerCase() == nameQuery); 
-
+    
     if(name.length === 0){
-        notFoundMessage = `${nameQuery} NOT FOUND IN RECORDS.`
+        message = `${nameQuery} NOT FOUND IN RECORDS.`
+    }else{        
+        message = `Results: Records for ${nameQuery}`;
     }
 
     res.render("form", {
@@ -50,9 +51,8 @@ getnamesRouter.get("/getOnename/:nameQuery", (req,res) => {
         route:"/getnames/getAllnames",
         method: "GET",
         buttonName: "Search",
-        message: `Results: Records for ${nameQuery}`,
+        message: message,
         names:name,
-        notFoundMessage: notFoundMessage,
     });
 });
 

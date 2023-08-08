@@ -1,17 +1,22 @@
 const express = require("express");
 
 function genId (DB) {
-    const newId = DB.length
+
+    const ids = DB.map(name => name.id);
+    let newId = ids[ids.length-1] +1
+
+    const idAlreadyExists = () =>{
+        if(ids.includes(newId)){
+            newId++
+            idAlreadyExists()
+        }else{
+            console.log(newId)
+            return 
+        }
+    }
+    idAlreadyExists()
     return newId
 };
 
-function findById ( DB, id){
-    const record = DB.filter(item => item.id === id);
-    if(record.length === 0){
-        return null
-    }else{
-        return record
-    }
-};
 
- module.exports = { genId, findById };
+ module.exports = { genId };
